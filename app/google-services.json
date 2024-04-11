@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "679681973482",
+    "firebase_url": "https://nhhao11project-default-rtdb.firebaseio.com",
+    "project_id": "nhhao11project",
+    "storage_bucket": "nhhao11project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679681973482:android:41d57d74d89ba017504b93",
+        "android_client_info": {
+          "package_name": "com.example.firebaseexample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmoE4F9nt0re3jDn4JjMrsCv93l4L5urU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

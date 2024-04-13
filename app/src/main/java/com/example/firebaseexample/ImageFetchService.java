@@ -81,9 +81,5 @@ public class ImageFetchService extends Service {
         broadcastIntent.putStringArrayListExtra("imageUrls", (ArrayList<String>) imageUrls);
         LocalBroadcastManager.getInstance(this).sendBroadcast(broadcastIntent);
     }
-    private void broadcastImages() {
-        Intent intent = new Intent("IMAGE_FETCH_COMPLETE");
-        intent.putStringArrayListExtra("imageUrls", (ArrayList<String>) imageUrls);
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
-    }
+
 }

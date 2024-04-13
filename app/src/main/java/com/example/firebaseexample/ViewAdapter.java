@@ -61,13 +61,6 @@
                 }
             });
 
-            holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    toggleSelection(position);
-                    return true;
-                }
-            });
 
 
         }

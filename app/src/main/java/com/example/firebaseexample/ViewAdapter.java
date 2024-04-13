@@ -6,12 +6,14 @@
     import android.graphics.Bitmap;
     import android.graphics.BitmapFactory;
     import android.graphics.Color;
+    import android.media.Image;
     import android.view.ContextMenu;
     import android.view.LayoutInflater;
     import android.view.MenuInflater;
     import android.view.View;
     import android.view.ViewGroup;
     import android.widget.ImageView;
+    import android.widget.Toast;
 
     import androidx.annotation.NonNull;
     import androidx.core.content.ContextCompat;
@@ -32,6 +34,8 @@
         private List<String> imageURLs;
         private List<String> selectedItems = new ArrayList<>();
 
+        boolean isSelectedMode = false;
+
 
         public ViewAdapter(List<String> imageURLs) {
             this.imageURLs = imageURLs;
@@ -50,16 +54,19 @@
             // Sử dụng ImageLoad để load hình ảnh từ imageURL và hiển thị vào imageView
             new ImageLoad(  holder.imageView, imageURL).execute();
 
+
             // Sự kiện click vào ImageView
             holder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     // Chuyển đến màn hình mới và hiển thị ảnh ở kích thước lớn
                     Intent intent = new Intent(v.getContext(), FullScreenImageActivity.class);
                     intent.putExtra("imageURL",imageURL);
                     v.getContext().startActivity(intent);
                 }
             });
+
 
 
 
@@ -72,6 +79,7 @@
 
         public static class ImageViewHolder extends RecyclerView.ViewHolder {
             ImageView imageView;
+            ImageView checkmark;
 
             public ImageViewHolder(@NonNull View itemView) {
                 super(itemView);
@@ -83,6 +91,7 @@
             String item = imageURLs.get(position);
             if (selectedItems.contains(item)) {
                 selectedItems.remove(item);
+
             } else {
                 selectedItems.add(item);
             }

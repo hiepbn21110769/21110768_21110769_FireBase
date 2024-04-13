@@ -83,7 +83,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
                 // get url/ text from edit text
                 String url = imageURL;
 
-                // Thiết lập đường dẫn lưu trữ đúng cách, ví dụ: thư mục Downloads với tên tệp từ URL
+
                 String fileName = URLUtil.guessFileName(url, null, null);
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
 
@@ -102,7 +102,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(FullScreenImageActivity.this, "Hình ảnh đã được tải về thành công", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FullScreenImageActivity.this, "Download successfully", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -120,7 +120,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 // Nếu thành công, hiển thị thông báo
-                Toast.makeText(FullScreenImageActivity.this, "Hình ảnh đã được xoá thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FullScreenImageActivity.this, "Delete sucessfully", Toast.LENGTH_SHORT).show();
                 // Quay về MainActivity
                 Intent intent = new Intent(FullScreenImageActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -130,7 +130,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 // Nếu thất bại, hiển thị thông báo lỗi
-                Toast.makeText(FullScreenImageActivity.this, "Lỗi khi xoá hình ảnh: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(FullScreenImageActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

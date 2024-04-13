@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         imageAdapter = new ViewAdapter(imageURLs);
         recyclerView.setAdapter(imageAdapter);
 
+
         imageFetchService = new ImageFetchService();
         startService(new Intent(this, ImageFetchService.class));
         imageFetchService.fetchNextBatch();
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if (!isLoading && newState == RecyclerView.SCROLL_STATE_IDLE && layoutManager.findLastVisibleItemPosition() == imageAdapter.getItemCount() - 1){
+                if (!isLoading  && layoutManager.findLastVisibleItemPosition() == imageAdapter.getItemCount() - 1){
                     isLoading = true;
                     imageFetchService.fetchNextBatch();
                 }

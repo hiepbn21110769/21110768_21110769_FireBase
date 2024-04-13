@@ -20,6 +20,9 @@
             android:name=".Upload_Image_Activity"
             android:exported="false" />
         <activity
+            android:name=".FullScreenImageActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
